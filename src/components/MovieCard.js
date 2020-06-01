@@ -1,11 +1,9 @@
   
 import React from "react";
-import { Card, ListGroupItem, ListGroup,Button } from "react-bootstrap";
-
+import { Card, ListGroupItem, ListGroup } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 export default function MovieCard(props) {
   let movie = props.movie;
-  let openModal = props.showModal;
   let language = props.movie.original_language;
   let language3;
   const language2 = () => {
@@ -23,8 +21,8 @@ export default function MovieCard(props) {
     <Card className="Card m-5 row center " style={{ width: "18rem" }}>
       <Card.Img
         variant="top" href=" "
-        src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`}
-      onClick={()=> openModal}
+        src={`https://image.tmdb.org/t/p/w300_and_h450_bestv2${movie.poster_path}`
+        onClick={}}
       />
       <Card.Body>
         <Card.Title>{movie.original_title}</Card.Title>
@@ -40,12 +38,8 @@ export default function MovieCard(props) {
     <ListGroupItem className="text-center">Rating: {movie.vote_average} </ListGroupItem>
       </ListGroup>
       <Card.Body>
-      <Button class="d-flex justify-content-center banner" id="load-more-btn" variant="info" type="button" >
-      
-        <Card.Link
-      onClick={()=> openModal(movie.id)}>Trailer</Card.Link>
-        </Button>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Link href="#">IMDB</Card.Link>
+        <Card.Link href="#">Watch Trailer</Card.Link>
       </Card.Body>
     </Card>
   );
